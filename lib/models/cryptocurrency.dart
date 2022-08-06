@@ -13,6 +13,7 @@ class CryptoCurrency {
   final double? circulatingSupply;
   final double? ath;
   final double? atl;
+  bool isFavourite = false;
 
   CryptoCurrency({
     required this.id,
@@ -29,25 +30,26 @@ class CryptoCurrency {
     required this.circulatingSupply,
     required this.ath,
     required this.atl,
+    required this.isFavourite,
   });
 
   factory CryptoCurrency.fromJSON(Map<String, dynamic> map) {
     return CryptoCurrency(
-      id: map['id'],
-      symbol: map['symbol'],
-      name: map['name'],
-      image: map['image'],
-      currentPrice: double.parse(map['current_price'].toString()),
-      marketCap: double.parse(map['market_cap'].toString()),
-      marketCapRank: map['market_cap_rank'],
-      high24: double.parse(map['high_24h'].toString()),
-      low24: double.parse(map['low_24h'].toString()),
-      priceChange24: double.parse(map['price_change_24h'].toString()),
-      priceChangePercentage24:
-          double.parse(map['price_change_percentage_24h'].toString()),
-      circulatingSupply: double.parse(map['circulating_supply'].toString()),
-      ath: double.parse(map['ath'].toString()),
-      atl: double.parse(map['atl'].toString()),
-    );
+        id: map['id'],
+        symbol: map['symbol'],
+        name: map['name'],
+        image: map['image'],
+        currentPrice: double.parse(map['current_price'].toString()),
+        marketCap: double.parse(map['market_cap'].toString()),
+        marketCapRank: map['market_cap_rank'],
+        high24: double.parse(map['high_24h'].toString()),
+        low24: double.parse(map['low_24h'].toString()),
+        priceChange24: double.parse(map['price_change_24h'].toString()),
+        priceChangePercentage24:
+            double.parse(map['price_change_percentage_24h'].toString()),
+        circulatingSupply: double.parse(map['circulating_supply'].toString()),
+        ath: double.parse(map['ath'].toString()),
+        atl: double.parse(map['atl'].toString()),
+        isFavourite: false);
   }
 }

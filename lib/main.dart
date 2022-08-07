@@ -2,6 +2,7 @@ import 'package:crypto_tracker/constants/themes.dart';
 import 'package:crypto_tracker/models/local_storage.dart';
 import 'package:crypto_tracker/pages/home_page.dart';
 import 'package:crypto_tracker/providers/market_provider.dart';
+import 'package:crypto_tracker/providers/prices_provider.dart';
 import 'package:crypto_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,15 +28,16 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(theme),
-        )
+        ),
       ],
       child: Consumer<ThemeProvider>(builder: (context, themeData, child) {
         return MaterialApp(
-            themeMode: themeData.themeMode,
-            theme: lightTheme,
-            darkTheme: darkTheme,
-            debugShowCheckedModeBanner: false,
-            home: const HomePage());
+          themeMode: themeData.themeMode,
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          debugShowCheckedModeBanner: false,
+          home: const HomePage(),
+        );
       }),
     );
   }

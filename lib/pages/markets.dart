@@ -1,6 +1,4 @@
-import 'package:crypto_tracker/pages/details.dart';
 import 'package:crypto_tracker/widgets/crypto_list_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

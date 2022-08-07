@@ -34,4 +34,14 @@ class API {
       return [];
     }
   }
+
+  static Future<List<dynamic>> getPrices(String id) async {
+    Uri requestPath = Uri.parse(
+        "https://api.coingecko.com/api/v3/coins/$id/market_chart?vs_currency=inr&days=7");
+    var response = await http.get(requestPath);
+
+    var decodedResponse = jsonDecode(response.body);
+    List<dynamic> result = decodedResponse["prices"];
+    return result;
+  }
 }

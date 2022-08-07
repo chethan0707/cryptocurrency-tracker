@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:crypto_tracker/providers/market_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+
+import '../models/chart_model.dart';
 
 class DetailsPage extends StatefulWidget {
   final String id;
@@ -11,6 +16,28 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+  late TrackballBehavior _trackballBehavior;
+  late ZoomPanBehavior _zoomPanBehavior;
+  @override
+  void initState() {
+    _zoomPanBehavior = ZoomPanBehavior(enablePinching: true);
+    _trackballBehavior = TrackballBehavior(
+      enable: true,
+      activationMode: ActivationMode.singleTap,
+      tooltipSettings: const InteractiveTooltip(decimalPlaces: 3, enable: true),
+      markerSettings: const TrackballMarkerSettings(
+          markerVisibility: TrackballVisibilityMode.visible),
+      tooltipDisplayMode: TrackballDisplayMode.groupAllPoints,
+      tooltipAlignment: ChartAlignment.near,
+    );
+    // _trackballBehavior = CrosshairBehavior(
+    //   activationMode: ActivationMode.singleTap,
+
+    //   enable: true,
+    // );
+    super.initState();
+  }
+
   Widget titleAndDetails(
       String title, String detail, CrossAxisAlignment crossAxisAlignment) {
     return Column(
@@ -38,8 +65,12 @@ class _DetailsPageState extends State<DetailsPage> {
           child: Consumer<MarketProvider>(
             builder: (context, marketProvider, child) {
               var currenCrypto = marketProvider.fetchCryptoById(widget.id);
+              var prices = [];
               return RefreshIndicator(
                 onRefresh: () async {
+                  marketProvider.fetchPrices(currenCrypto.id!);
+                  prices = marketProvider.prices;
+                  log(marketProvider.prices.length.toString());
                   await marketProvider.fetchData();
                 },
                 child: ListView(
@@ -144,14 +175,30 @@ class _DetailsPageState extends State<DetailsPage> {
                       children: [
                         titleAndDetails(
                           "All Time Low",
-                          currenCrypto.atl!.toStringAsFixed(4),
+                          "₹ ${currenCrypto.atl!.toStringAsFixed(4)}",
                           CrossAxisAlignment.start,
                         ),
                         titleAndDetails(
                           "All Time High",
-                          currenCrypto.ath!.toStringAsFixed(4),
+                          "₹ ${currenCrypto.ath!.toStringAsFixed(4)}",
                           CrossAxisAlignment.end,
-                        )
+                        ),
+                      ],
+                    ),
+                    SfCartesianChart(
+                      title: ChartTitle(text: ("Past 7 days")),
+                      zoomPanBehavior: _zoomPanBehavior,
+                      trackballBehavior: _trackballBehavior,
+                      primaryXAxis: DateTimeAxis(),
+                      series: <ChartSeries>[
+                        // Renders line chart
+                        LineSeries<Prices, DateTime>(
+                            xAxisName: "date",
+                            name: "Prices",
+                            yAxisName: "prices",
+                            dataSource: marketProvider.prices,
+                            xValueMapper: (Prices price, _) => price.date,
+                            yValueMapper: (Prices price, _) => price.price)
                       ],
                     )
                   ],

@@ -23,7 +23,7 @@ class API {
   static Future<List<dynamic>> getNews() async {
     try {
       Uri requestPath = Uri.parse(
-          "https://newsdata.io/api/1/news?apikey=$apiKey&language=en");
+          "https://newsdata.io/api/1/news?apikey=pub_99453bb193bb624cd4cb0f8cf727b7a0c54b&q=cryptocurrency&country=ca,cn,in,gb,us&language=en");
 
       var response = await http.get(requestPath);
       var result = jsonDecode(response.body);

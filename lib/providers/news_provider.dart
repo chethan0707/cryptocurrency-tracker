@@ -17,11 +17,13 @@ class NewsProvider with ChangeNotifier {
     List<News> tempNews = [];
     for (var newsItem in response) {
       News _news = News.fromJson(newsItem);
-      news.add(_news);
+      tempNews.add(_news);
     }
 
     news = tempNews;
     isLoading = false;
     notifyListeners();
   }
+
+  fetchNewsById() {}
 }

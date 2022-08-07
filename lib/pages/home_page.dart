@@ -1,5 +1,6 @@
 import 'package:crypto_tracker/pages/favourites.dart';
 import 'package:crypto_tracker/pages/markets.dart';
+import 'package:crypto_tracker/pages/news_page.dart';
 import 'package:crypto_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    tabContoller = TabController(length: 2, vsync: this);
+    tabContoller = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -64,6 +65,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Tab(
                     child: Text("Favorites",
                         style: Theme.of(context).textTheme.bodyText1),
+                  ),
+                  Tab(
+                    child: Text("News",
+                        style: Theme.of(context).textTheme.bodyText1),
                   )
                 ],
               ),
@@ -73,10 +78,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
                   controller: tabContoller,
-                  children: const [
-                    Markets(),
-                    Favourites(),
-                  ],
+                  children: const [Markets(), Favourites(), NewsPage()],
                 ),
               )
             ],

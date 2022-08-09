@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:crypto_tracker/constants/api_key.dart';
 import 'package:http/http.dart' as http;
 
 class API {
-  static const apiKey = "pub_99453bb193bb624cd4cb0f8cf727b7a0c54b";
   static Future<List<dynamic>> getMarkets() async {
     try {
       Uri requestPath = Uri.parse(
@@ -23,7 +23,7 @@ class API {
   static Future<List<dynamic>> getNews() async {
     try {
       Uri requestPath = Uri.parse(
-          "https://newsdata.io/api/1/news?apikey=pub_99453bb193bb624cd4cb0f8cf727b7a0c54b&q=cryptocurrency&country=ca,cn,in,gb,us&language=en");
+          "https://newsdata.io/api/1/news?apikey=$apiKey&q=cryptocurrency&country=ca,cn,in,gb,us&language=en");
 
       var response = await http.get(requestPath);
       var result = jsonDecode(response.body);

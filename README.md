@@ -1,16 +1,25 @@
 # crypto_tracker
 
-A new Flutter project.
+Cryptocurrency Tracker.
 
-## Getting Started
+# Features
 
-This project is a starting point for a Flutter application.
+0. A Simple Flutter app get live Cryptocurrency prices and news related to Cryptocurrencies.
+1. User can toggle between dark and light theme.
+2. 
+ | Light                                      | Dark                                       |
+   | ------------------------------------------ | ------------------------------------------ |
+   | <img src="lib/screenshots/l1" width="400"> | <img src="lib/screenshots/b1" width="400"> |
+   | <img src="lib/screenshots/l2" width="400"> | <img src="lib/screenshots/b2" width="400"> |
+   | <img src="lib/screenshots/l3" width="400"> | <img src="lib/screenshots/b3" width="400"> |
+   | <img src="lib/screenshots/l4" width="400"> | <img src="lib/screenshots/b4" width="400"> |
+   | <img src="lib/screenshots/l4" width="400"> | <img src="lib/screenshots/b5" width="400"> |
 
-A few resources to get you started if this is your first Flutter project:
+## 🔌 Plugins
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Name                     | Usage                                                                     |
+| ------------------------ | ------------------------------------------------------------------------- |
+| [**Provider**]           | State Management                                                          |
+| [**HTTP package**]       | HTTP requests                                                             |
+| [**Shared Preferences**] | Used to store data locally in key value pairs and can be retreived easily |
+| [**SyncFusion Charts**]  | Used to plot charts                                                       |

@@ -9,11 +9,11 @@ Cryptocurrency Tracker.
 2. 
  | Light                                      | Dark                                       |
    | ------------------------------------------ | ------------------------------------------ |
-   | <img src="lib/screenshots/l1" width="400"> | <img src="lib/screenshots/b1" width="400"> |
-   | <img src="lib/screenshots/l2" width="400"> | <img src="lib/screenshots/b2" width="400"> |
-   | <img src="lib/screenshots/l3" width="400"> | <img src="lib/screenshots/b3" width="400"> |
-   | <img src="lib/screenshots/l4" width="400"> | <img src="lib/screenshots/b4" width="400"> |
-   | <img src="lib/screenshots/l4" width="400"> | <img src="lib/screenshots/b5" width="400"> |
+   | <img src="lib/screenshots/l1.jpg" width="400"> | <img src="lib/screenshots/b1.jpg" width="400"> |
+   | <img src="lib/screenshots/l2.jpg" width="400"> | <img src="lib/screenshots/b2.jpg" width="400"> |
+   | <img src="lib/screenshots/l3.jpg" width="400"> | <img src="lib/screenshots/b3.jpg" width="400"> |
+   | <img src="lib/screenshots/l4.jpg" width="400"> | <img src="lib/screenshots/b4.jpg" width="400"> |
+   | <img src="lib/screenshots/l4.jpg" width="400"> | <img src="lib/screenshots/b5.jpg" width="400"> |
 
 ## 🔌 Plugins
 

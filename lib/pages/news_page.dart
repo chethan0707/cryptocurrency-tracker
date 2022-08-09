@@ -26,6 +26,8 @@ class _NewsPageState extends State<NewsPage> {
                 newsProvider.fetchNews();
               },
               child: ListView.builder(
+                physics: BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics()),
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {},

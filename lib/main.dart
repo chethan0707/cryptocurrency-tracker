@@ -3,7 +3,6 @@ import 'package:crypto_tracker/models/local_storage.dart';
 import 'package:crypto_tracker/pages/home_page.dart';
 import 'package:crypto_tracker/providers/market_provider.dart';
 import 'package:crypto_tracker/providers/news_provider.dart';
-import 'package:crypto_tracker/providers/prices_provider.dart';
 import 'package:crypto_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

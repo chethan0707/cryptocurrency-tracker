@@ -6,7 +6,9 @@ Cryptocurrency Tracker.
 
 0. A Simple Flutter app get live Cryptocurrency prices and news related to Cryptocurrencies.
 1. User can toggle between dark and light theme.
-2. 
+2. User can refresh to get live updates.
+
+
  | Light                                      | Dark                                       |
    | ------------------------------------------ | ------------------------------------------ |
    | <img src="lib/screenshots/l1.jpg" width="400"> | <img src="lib/screenshots/b1.jpg" width="400"> |
